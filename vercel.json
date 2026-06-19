@@ -1,14 +1,14 @@
 {
     "version": 2,
     "framework": null,
-    "outputDirectory": "public",
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.7.3" }
+        "api/index.php": { "runtime": "vercel-php@0.7.3" },
+        "api/assets.php": { "runtime": "vercel-php@0.7.3" }
     },
     "routes": [
         {
-            "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf))",
-            "dest": "/public/$1"
+            "src": "/(bootstrap-5.3.8-dist|assets)/(.*)",
+            "dest": "/api/assets.php?file=public/$1/$2"
         },
         {
             "src": "/(.*)",
